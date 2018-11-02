@@ -10,27 +10,27 @@
 #include "boolean.h"
 
 /*  Kamus Umum */
-#define IdxArMax 100
+#define ArIdxMax 100
 /* Indeks maksimum array, sekaligus ukuran maksimum array dalam C */
-#define IdxArMin 1
+#define ArIdxMin 1
 /* Indeks minimum array */
-#define IdxArUndef -999 
+#define ArIdxUndef -999 
 /* Indeks tak terdefinisi*/
-#define ElArUndef " "
+#define ArElUndef " "
 /* Element yang tidak terdefinisi */
 
 /* Definisi elemen dan koleksi objek */
-typedef char[255] string; /* type string */
-typedef int IdxArType;  /* type indeks */
-typedef string ArType;   /* type elemen tabel */
+typedef char[255] Arstring; /* type string */
+typedef int ArIdxType;  /* type indeks */
+typedef Arstring ArType;   /* type elemen tabel */
 typedef struct { 
-	ArType ArTI[IdxArMax+1]; /* memori tempat penyimpan elemen (container) */
+	ArType ArTI[ArIdxMax+1]; /* memori tempat penyimpan elemen (container) */
 	int ArNeff; /* >=0, banyaknya elemen efektif */
-  IdxArType ArLast; /* Indeks terakhir yang relevan dengan restoran (banyaknya meja pada restoran) */
-} OrderAr;
-/* Indeks yang digunakan [IdxArMin..IdxArMax] */
-/* Jika T adalah OrderAr, cara deklarasi dan akses: */
-/* Deklarasi : T : OrderAr */
+  ArIdxType ArLast; /* Indeks terakhir yang relevan dengan restoran (banyaknya meja pada restoran) */
+} ArOrder;
+/* Indeks yang digunakan [ArIdxMin..ArIdxMax] */
+/* Jika T adalah ArOrder, cara deklarasi dan akses: */
+/* Deklarasi : T : ArOrder */
 /* Maka cara akses: 
    T.ArNeff  untuk mengetahui banyaknya elemen 
    T.ArTI    untuk mengakses seluruh nilai elemen tabel 
@@ -50,35 +50,35 @@ typedef struct {
 
 /* ********** KONSTRUKTOR ********** */
 /* Konstruktor : create tabel kosong  */
-void ArMakeEmpty(OrderAr * T, int n);
+void ArMakeEmpty(ArOrder * T, int n);
 /* I.S. T sembarang */
-/* F.S. Terbentuk tabel T kosong dengan kapasitas IdxArMax-IdxArMin+1, Neff = 0, dan Last = n*/
+/* F.S. Terbentuk tabel T kosong dengan kapasitas ArIdxMax-ArIdxMin+1, Neff = 0, dan Last = n*/
 
 /* ********** SELEKTOR (TAMBAHAN) ********** */
 /* *** Banyaknya elemen *** */
-int ArNbElmt(OrderAr T);
+int ArNbElmt(ArOrder T);
 /* Mengirimkan banyaknya elemen efektif tabel */
 /* Mengirimkan nol jika tabel kosong */
 
 /* *** Daya tampung container *** */
-IdxType ArGetLastIdx(OrderAr T);
+ArIdxType ArGetLastIdx(ArOrder T);
 /* Prekondisi : Tabel T tidak kosong */
 /* Mengirimkan indeks elemen T terakhir yang memiliki nilai terdefinisi */
 
 /* ********** Test Indeks yang valid ********** */
-boolean ArIsIdxEff(OrderAr T, IdxType i);
+boolean ArIsIdxEff(ArOrder T, ArIdxType i);
 /* Mengirimkan true jika i adalah indeks yang terdefinisi utk tabel */
 /* yaitu antara 1..Last(T) */
 
 /* ********** TEST KOSONG/PENUH ********** */
 /* *** Test tabel kosong *** */
-boolean ArIsEmpty(OrderAr T);
+boolean ArIsEmpty(ArOrder T);
 /* Mengirimkan true jika tabel T kosong, mengirimkan false jika tidak */
 /* Range yang dicek adalah [1..Last(T)] */
 
 /* ********** BACA dan TULIS dengan INPUT/OUTPUT device ********** */
 /* *** Mendefinisikan isi tabel dari pembacaan *** */
-void ArTulisIsi(OrderAr T);
+void ArTulisIsi(ArOrder T);
 /* Proses : Menuliskan isi tabel dengan traversal */
 /* I.S. T boleh kosong */
 /* F.S. Jika T tidak kosong : menulis "Order" dan indeks dan elemen tabel */
@@ -93,18 +93,18 @@ void ArTulisIsi(OrderAr T);
 
 /* ********** SEARCHING ********** */
 /* ***  Perhatian : Tabel boleh kosong!! *** */
-IdxType ArSearch(OrderAr T, ArType X);
+ArIdxType ArSearch(ArOrder T, ArType X);
 /* Search apakah ada elemen tabel T yang bernilai X */
 /* Jika ada, menghasilkan indeks i terkecil, dengan elemen ke-i = X */
 /* Jika tidak ada, mengirimkan IdxUndef */
 /* Menghasilkan indeks tak terdefinisi (IdxUndef) jika tabel T kosong */
 
-int ArBanOrderX(OrderAr T, ArType X);
+int ArBanOrderX(ArOrder T, ArType X);
 /* Mengembalikan berapa banyak order dengan nilai X */
 /* Bernilai nol untuk array kosong atau tidak terdapat order dengan nilai X */
 
 /* ********** MENAMBAH ELEMEN ********** */
-void ArAddEli  (OrderAr * T, ArType X, IdxType i);
+void ArAddEli  (ArOrder * T, ArType X, ArIdxType i);
 /* Menambahkan X sebagai elemen ke-i tabel tanpa mengganggu  elemen yang sudah ada */
 /* I.S. Tabel boleh kosong dan tidak penuh */
 /*      i adalah indeks yang valid. */
@@ -112,7 +112,7 @@ void ArAddEli  (OrderAr * T, ArType X, IdxType i);
 /* F.S. X adalah elemen ke-i T yang baru */
 
 /* ********** MENGHAPUS ELEMEN ********** */
-void ArDelEli  (OrderAr * T, IdxType i);
+void ArDelEli  (ArOrder * T, ArIdxType i);
 /* Menghapus elemen ke-i tabel tanpa mengganggu elemen lain */
 /* I.S. Tabel tidak kosong, i adalah indeks efektif yang valid */
 /* F.S. Banyaknya elemen tabel berkurang satu */
