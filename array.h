@@ -1,8 +1,8 @@
-/* MODUL TABEL INTEGER */
-/* Berisi definisi dan semua primiArtif pemrosesan tabel integer */
-/* Penempatan elemen selalu rapat kiri */
-/* Versi I : dengan banyaknya elemen didefinisikan secara eksplisit, 
-   memori tabel staArtik */
+/* MODUL ARRAY PESANAN */
+/* Berisi definisi dan semua primitif pemrosesan tabel pesanan (string) */
+/* Penempatan elemen sesuai dengan nomer meja (contoh : Order[3] = "Indomie"; berarti meja 3 memesan Indomie) */
+/* Untuk meja yang belum/tidak memesan akan diberikan nilai blank " "*/
+/* Semua fungsi dan prosedur yang tertulis di sini diawali dengan Ar<nama sub-program> */
 
 #ifndef ARRAY_H
 #define ARRAY_H
