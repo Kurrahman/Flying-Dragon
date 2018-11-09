@@ -66,6 +66,10 @@ void ArTulisIsi(ArOrder T);
    Ayam Geprek, 4
 */
 
+
+
+
+
 /* ********** MENAMBAH ELEMEN ********** */
 void ArAddEli  (ArOrder * T, ArType X, ArIdxType i);
 /* Menambahkan X sebagai elemen ke-i tabel tanpa mengganggu  elemen yang sudah ada */

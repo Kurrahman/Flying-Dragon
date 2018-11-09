@@ -6,7 +6,7 @@
 void ArCreateEmpty(ArOrder * T, int n){
     ArIdxType i;
     for (i = 1; i <= n; i++){
-        ArElmt(*T,i) = ArElUndef;
+        OrderMeja(*T,i) = ArElUndef;
     }
     ArLast(*T) = n;
 }
@@ -19,8 +19,8 @@ void ArTulisIsi(ArOrder T){
     printf("Order \n");
     ArIdxType i;
     for (i = 1; i <= ArLast(T); i++){
-        if (ArElmt(T,i) != ArElUndef){
-            switch (ArElmt(T,i)){
+        if (OrderMeja(T,i) != ArElUndef){
+            switch (OrderMeja(T,i)){
                 case (51) : {
                         printf("Banana Split, %d\n", i);
                         break;
@@ -75,7 +75,7 @@ void ArTulisIsi(ArOrder T){
 
 /* ********** MENAMBAH ELEMEN ********** */
 void ArAddEli  (ArOrder * T, ArType X, ArIdxType i){
-    ArElmt(*T,i) = X;
+    OrderMeja(*T,i) = X;
 }
 /* Menambahkan X sebagai elemen ke-i tabel tanpa mengganggu  elemen yang sudah ada */
 /* I.S. Tabel boleh kosong dan tidak penuh */
@@ -85,7 +85,7 @@ void ArAddEli  (ArOrder * T, ArType X, ArIdxType i){
 
 /* ********** MENGHAPUS ELEMEN ********** */
 void ArDelEli  (ArOrder * T, ArIdxType i){
-    ArElmt(*T,i) = ArElUndef;
+    OrderMeja(*T,i) = ArElUndef;
 }
 /* Menghapus elemen ke-i tabel tanpa mengganggu elemen lain */
 /* I.S. Tabel tidak kosong, i adalah indeks efektif yang valid */
