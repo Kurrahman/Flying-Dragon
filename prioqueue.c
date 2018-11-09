@@ -74,6 +74,7 @@ void Add (Queue * Q, infotype X){
         Head(*Q)=1;
         Tail(*Q)=1;
         InfoTail(*Q)=X;
+
     } else{
         Tail(*Q) = Tail(*Q) + 1;
         InfoTail(*Q) = X;
@@ -86,6 +87,7 @@ void Add (Queue * Q, infotype X){
         }
 
     }
+    
 }
 void Del (Queue * Q, infotype * X){
 /* Proses: Menghapus X pada Q dengan aturan FIFO */
@@ -100,13 +102,12 @@ void Del (Queue * Q, infotype * X){
         Head (*Q) = Nil;
         Tail(*Q) = Nil;
     } else {
-        indeks = Head(*Q);
+        indeks = 1;
         do {
             Elmt(*Q,indeks) = Elmt(*Q,indeks+1); 
             indeks = indeks + 1;
         } while (indeks != Tail(*Q));
-    }
-    
+    }   Tail(*Q) = Tail(*Q) - 1;
 }
 
 /* Operasi Tambahan */
@@ -119,4 +120,20 @@ void PrintQueue (Queue Q){
 <prio-n> <elemen-n>
 #
 */
+
+}
+
+void DecreInfo (Queue * Q){
+/* Mengurangi Info dari infotype */
+/* I.S. Q tidak mungkin kosong */
+/* F.S. Nilai dari Info(e) = Info(e) - 1 */
+    //Kamus Lokal
+    address indeks;
+    //Algoritma
+    indeks = Head(*Q);
+    do {
+        indeks = indeks + 1;
+        Info(Elmt(*Q,indeks)) = Info(Elmt(*Q,indeks)) - 1;
+    } while (indeks != Tail(*Q));
+
 }

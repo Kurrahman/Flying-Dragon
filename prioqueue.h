@@ -85,4 +85,9 @@ void PrintQueue (Queue Q);
 #
 */
 
+void DecreInfo (Queue * Q);
+/* Mengurangi Info dari infotype */
+/* I.S. Q tidak mungkin kosong */
+/* F.S. Nilai dari Info(e) = Info(e) - 1 */
+
 #endif
