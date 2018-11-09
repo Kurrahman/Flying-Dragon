@@ -13,7 +13,7 @@ int main(){
     long tick = 0;
     scanf("%s", comm);
     printf("%d\n", CompStr(comm,"EXIT"));
-    /*do{
+    do{
         scanf("%s", comm);
         if ((CompStr(comm, "GU"))){
 
@@ -44,7 +44,7 @@ int main(){
         }else if ((CompStr(comm, "LOAD"))){
             
         }
-    }while (!(CompStr(comm, "EXIT")));*/
+    }while (!(CompStr(comm, "EXIT")));
     return 0;
 }
 
