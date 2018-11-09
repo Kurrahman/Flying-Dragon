@@ -6,81 +6,66 @@
 #include <stdlib.h>
 
 boolean CompStr(char S1[], char S2[]);
+int StrLen(char s[]);
 
 int main(){
     char comm[10];
     long tick = 0;
-    do{
-        switch {
-            case CompStr(comm, "GU") :{
-                tick++;
-                break;
-            }
-            case CompStr(comm, "GD") :{
-                tick++;
-                break;
-            }
-            case CompStr(comm, "GL") :{
-                tick++;
-                break;
-            }
+    scanf("%s", comm);
+    printf("%d\n", CompStr(comm,"EXIT"));
+    /*do{
+        scanf("%s", comm);
+        if ((CompStr(comm, "GU"))){
+
+        }else if ((CompStr(comm, "GD"))){
+
+        }else if ((CompStr(comm, "GL"))){
             
-            case CompStr(comm, "GR") :{
-                tick++;
-                break;
-            }
-            case CompStr(comm, "ORDER") :{
-                tick++;
-                break;
-            }
-            case CompStr(comm, "PUT") :{
-                tick++;
-                break;
-            }
-            case CompStr(comm, "TAKE") :{
-                tick++;
-                break;
-            }
-            case CompStr(comm, "CH") :{
-                tick++;
-                break;
-            }
-            case CompStr(comm, "CT") :{
-                tick++;
-                break;
-            }
-            case CompStr(comm, "PLACE") :{
-                tick++;
-                break;
-            }
-            case CompStr(comm, "GIVE") :{
-                tick++;
-                break;
-            }
-            case CompStr(comm, "RECIPE") :{
-                
-                break;
-            }
-            case CompStr(comm, "SAVE") :{
-                
-                break;
-            }
-            case CompStr(comm, "LOAD") :{
-                break;
-            }
-            case CompStr(comm, "EXIT") :{
-                break;
-            }
+        }else if ((CompStr(comm, "GR"))){
+            
+        }else if ((CompStr(comm, "ORDER"))){
+            
+        }else if ((CompStr(comm, "PUT"))){
+            
+        }else if ((CompStr(comm, "TAKE"))){
+            
+        }else if ((CompStr(comm, "CH"))){
+            
+        }else if ((CompStr(comm, "CT"))){
+            
+        }else if ((CompStr(comm, "PLACE"))){
+            
+        }else if ((CompStr(comm, "GIVE"))){
+            
+        }else if ((CompStr(comm, "RECIPE"))){
+            
+        }else if ((CompStr(comm, "SAVE"))){
+            
+        }else if ((CompStr(comm, "LOAD"))){
+            
         }
-    }while (!(CompStr(comm, "EXIT")));
+    }while (!(CompStr(comm, "EXIT")));*/
     return 0;
 }
 
 boolean CompStr(char S1[], char S2[]){
     int i = 0;
-    int len = sizeof(S2);
-    while ((i < len) && (S1[i] == S2[i])){
+    boolean stop = true;
+    int len = StrLen(S2);
+    while ((i < len) && stop){
+        if(S1[i] != S2[i]){
+            stop = false;
+        }
         i++;
     }
-    return (i > len);
+    return stop;
+}
+
+int StrLen(char s[]) {
+   int c = 0;
+ 
+   while (s[c] != '\0')
+      c++;
+ 
+   return c;
 }
