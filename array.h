@@ -20,7 +20,7 @@
 /* Element yang tidak terdefinisi */
 
 /* Definisi elemen dan koleksi objek */
-typedef char[255] Arstring; /* type string */
+typedef char *Arstring; /* type string */
 typedef int ArIdxType;  /* type indeks */
 typedef Arstring ArType;   /* type elemen tabel */
 typedef struct { 

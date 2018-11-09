@@ -62,7 +62,7 @@ boolean ArIsEmpty(ArOrder T){
 /* ********** BACA dan TULIS dengan INPUT/OUTPUT device ********** */
 /* *** Mendefinisikan isi tabel dari pembacaan *** */
 void ArTulisIsi(ArOrder T){
-    pritnf("Order \n");
+    printf("Order \n");
     if (!ArIsEmpty(T)){
         ArIdxType i;
         for (i = 1; i <= ArLast(T); i++){
@@ -88,7 +88,7 @@ void ArTulisIsi(ArOrder T){
 /* ***  Perhatian : Tabel boleh kosong!! *** */
 ArIdxType ArSearch(ArOrder T, ArType X){
     ArIdxType i = 1;
-    while ((i < ArLast) && (ArElmt(T,i) != X)){
+    while ((i < ArLast(T)) && (ArElmt(T,i) != X)){
         i++;
     }
     if (ArElmt(T,i) != X){
