@@ -20,7 +20,7 @@
 /* Element yang tidak terdefinisi */
 
 /* Definisi elemen dan koleksi objek */
-typedef char *Arstring; /* type string */
+typedef char Arstring[255]; /* type string */
 typedef int ArIdxType;  /* type indeks */
 typedef Arstring ArType;   /* type elemen tabel */
 typedef struct { 
@@ -110,7 +110,9 @@ void ArAddEli  (ArOrder * T, ArType X, ArIdxType i);
 /*      i adalah indeks yang valid. */
 /*      i adalah indeks dengan elemen tidak terdefinisi */
 /* F.S. X adalah elemen ke-i T yang baru */
-
+void ArCopyStr(Artype *Sin, Artype Sout);
+/* Menyalin Sout ke Sin */
+/* I.S.  */
 /* ********** MENGHAPUS ELEMEN ********** */
 void ArDelEli  (ArOrder * T, ArIdxType i);
 /* Menghapus elemen ke-i tabel tanpa mengganggu elemen lain */
