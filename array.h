@@ -16,13 +16,12 @@
 /* Indeks minimum array */
 #define ArIdxUndef -999 
 /* Indeks tak terdefinisi*/
-#define ArElUndef " "
+#define ArElUndef -999
 /* Element yang tidak terdefinisi */
 
 /* Definisi elemen dan koleksi objek */
-typedef char Arstring[255]; /* type string */
 typedef int ArIdxType;  /* type indeks */
-typedef Arstring ArType;   /* type elemen tabel */
+typedef int ArType;   /* type elemen tabel */
 typedef struct { 
 	ArType ArTI[ArIdxMax+1]; /* memori tempat penyimpan elemen (container) */
 	int ArNeff; /* >=0, banyaknya elemen efektif */
@@ -110,9 +109,7 @@ void ArAddEli  (ArOrder * T, ArType X, ArIdxType i);
 /*      i adalah indeks yang valid. */
 /*      i adalah indeks dengan elemen tidak terdefinisi */
 /* F.S. X adalah elemen ke-i T yang baru */
-void ArCopyStr(ArType *Sin, ArType Sout);
-/* Menyalin Sout ke Sin */
-/* I.S.  Sin */
+
 /* ********** MENGHAPUS ELEMEN ********** */
 void ArDelEli  (ArOrder * T, ArIdxType i);
 /* Menghapus elemen ke-i tabel tanpa mengganggu elemen lain */

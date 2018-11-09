@@ -32,7 +32,7 @@ int ArNbElmt(ArOrder T){
 /* *** Daya tampung container *** */
 ArIdxType ArGetLastIdx(ArOrder T){
     ArIdxType i = ArLast(T);
-    while ((i > 1) && (ArElmt(T,i) == ArElUndef)){
+    while ((i > 1) && (ArElUndef)){
         i++;
     }
     return i;
@@ -51,7 +51,7 @@ boolean ArIsIdxEff(ArOrder T, ArIdxType i){
 /* *** Test tabel kosong *** */
 boolean ArIsEmpty(ArOrder T){
     ArIdxType i = 1;
-    while ((i < ArLast(T)) && (ArElmt(T,i) == ArElUndef)){
+    while ((i < ArLast(T)) && (ArElUndef)){
         i++;
     }
     return (ArElmt(T,i) == ArElUndef);
@@ -67,7 +67,43 @@ void ArTulisIsi(ArOrder T){
         ArIdxType i;
         for (i = 1; i <= ArLast(T); i++){
             if (ArElmt(T,i) != ArElUndef){
-                printf("%s, %d\n", ArElmt(T,i), i);
+                switch (ArElmt(T,i)){
+                    case (51) : {
+                        printf("Banana Split\n");
+                        break;
+                    }
+                    case (52) : {
+                        printf("Sundae\n");
+                        break;
+                    }
+                    case (53) : {
+                        printf("Nasi Telur Dadar\n");
+                        break;
+                    }
+                    case (54) : {
+                        printf("Nasi Ayam Goreng\n");
+                        break;
+                    }
+                    case (55) : {
+                        printf("Burger\n");
+                        break;
+                    }
+                    case (56) : {
+                        printf("Hot Dog\n");
+                        break;
+                    }
+                    case (61) : {
+                        printf("Spaghetti Bolognese\n");
+                        break;
+                    }
+                    case (58) : {
+                        printf("Spaghetti Carbonara\n");
+                        break;
+                    }
+                    default :{
+                        break;
+                    }
+                }
             }
         }
     }
@@ -107,7 +143,7 @@ int ArBanOrderX(ArOrder T, ArType X){
     int n = 0;
     ArIdxType i;
     for (i = 1; i <= ArLast(T); i++){
-        if (ArElmt(T,i) == X){
+        if (X){
             n++;
         }
     }
