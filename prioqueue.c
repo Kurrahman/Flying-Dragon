@@ -115,15 +115,24 @@ void PrintQueue (Queue Q){
 /* Mencetak isi queue Q ke layar */
 /* I.S. Q terdefinisi, mungkin kosong */
 /* F.S. Q tercetak ke layar dengan format:
-<prio-1> <elemen-1>
+Waiting Cust
+<jumlah-1>
 ...
-<prio-n> <elemen-n>
+<jumlah-n>
 #
 */
-
+    //Kamus Lokal
+    address indeks;
+    //Algoritma
+     indeks = Head(Q);
+     printf("Waiting Cust\n");
+    while (indeks <= Tail(Q)){
+        printf("%d\n",Jumlah(Elmt(Q,indeks)));
+        indeks = indeks + 1;    
+    }
 }
 
-void DecreInfo (Queue * Q){
+void DecreSabar (Queue * Q){
 /* Mengurangi Info dari infotype */
 /* I.S. Q tidak mungkin kosong */
 /* F.S. Nilai dari Info(e) = Info(e) - 1 */
@@ -133,7 +142,7 @@ void DecreInfo (Queue * Q){
     indeks = Head(*Q);
     do {
         indeks = indeks + 1;
-        Info(Elmt(*Q,indeks)) = Info(Elmt(*Q,indeks)) - 1;
+        Sabar(Elmt(*Q,indeks)) = Sabar(Elmt(*Q,indeks)) - 1;
     } while (indeks != Tail(*Q));
 
 }
