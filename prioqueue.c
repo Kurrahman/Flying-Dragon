@@ -78,7 +78,7 @@ void Add (Queue * Q, infotype X){
         Tail(*Q) = Tail(*Q) + 1;
         InfoTail(*Q) = X;
         indeks = Tail(*Q);
-        while ( Prio(Elmt(*Q,indeks))> Prio(Elmt(*Q,indeks-1)) and (indeks-1 != 0)){
+        while (( Prio(Elmt(*Q,indeks)) > Prio(Elmt(*Q,indeks-1))) && (indeks-1!=0)){
             temp = Elmt(*Q,indeks);
             Elmt(*Q,indeks) = Elmt(*Q,indeks-1);
             Elmt(*Q,indeks-1)=temp;
@@ -92,8 +92,11 @@ void Del (Queue * Q, infotype * X){
 /* I.S. Q tidak mungkin kosong */
 /* F.S. X = nilai elemen HEAD pd I.S., HEAD "maju";
         Q mungkin kosong */
+    //Kamus Lokal
+    int indeks;
+    //Algoritma
     *X = InfoHead(*Q);
-    if ((!IsEmpty(*Q)) and (Head(*Q) == Tail(*Q))) {// Satu elemen
+    if ((!IsEmpty(*Q)) && (Head(*Q) == Tail(*Q))) { /* Satu elemen */
         Head (*Q) = Nil;
         Tail(*Q) = Nil;
     } else {
