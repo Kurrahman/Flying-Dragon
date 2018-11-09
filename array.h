@@ -50,7 +50,7 @@ typedef struct {
 
 /* ********** KONSTRUKTOR ********** */
 /* Konstruktor : create tabel kosong  */
-void ArMakeEmpty(ArOrder * T, int n);
+void ArCreateEmpty(ArOrder * T, int n);
 /* I.S. T sembarang */
 /* F.S. Terbentuk tabel T kosong dengan kapasitas ArIdxMax-ArIdxMin+1, Neff = 0, dan Last = n*/
 
@@ -110,9 +110,9 @@ void ArAddEli  (ArOrder * T, ArType X, ArIdxType i);
 /*      i adalah indeks yang valid. */
 /*      i adalah indeks dengan elemen tidak terdefinisi */
 /* F.S. X adalah elemen ke-i T yang baru */
-void ArCopyStr(Artype *Sin, Artype Sout);
+void ArCopyStr(ArType *Sin, ArType Sout);
 /* Menyalin Sout ke Sin */
-/* I.S.  */
+/* I.S.  Sin */
 /* ********** MENGHAPUS ELEMEN ********** */
 void ArDelEli  (ArOrder * T, ArIdxType i);
 /* Menghapus elemen ke-i tabel tanpa mengganggu elemen lain */

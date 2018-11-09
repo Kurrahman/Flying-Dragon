@@ -3,7 +3,7 @@
 
 /* ********** KONSTRUKTOR ********** */
 /* Konstruktor : create tabel kosong  */
-void ArMakeEmpty(ArOrder * T, int n){
+void ArCreateEmpty(ArOrder * T, int n){
     ArIdxType i;
     for (i = 1; i <= n; i++){
         ArElmt(*T,i) = ArElUndef;
