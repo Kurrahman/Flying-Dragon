@@ -9,25 +9,9 @@ void ArCreateEmpty(ArOrder * T, int n){
         ArElmt(*T,i) = ArElUndef;
     }
     ArLast(*T) = n;
-    ArNeff(*T) = 0;
 }
 /* I.S. T sembarang */
 /* F.S. Terbentuk tabel T kosong dengan kapasitas ArIdxMax-ArIdxMin+1, Neff = 0, dan Last = n*/
-
-/* ********** SELEKTOR (TAMBAHAN) ********** */
-/* *** Banyaknya elemen *** */
-int ArNbElmt(ArOrder T){
-    int N = 0;
-    ArIdxType i;
-    for (i = 1; i <= ArLast(T); i++){
-        if (ArElmt(T,i) != ArElUndef){
-            N++;
-        }
-    }
-    return N;
-}
-/* Mengirimkan banyaknya elemen efektif tabel */
-/* Mengirimkan nol jika tabel kosong */
 
 /* *** Daya tampung container *** */
 ArIdxType ArGetLastIdx(ArOrder T){
@@ -47,66 +31,53 @@ boolean ArIsIdxEff(ArOrder T, ArIdxType i){
 /* Mengirimkan true jika i adalah indeks yang terdefinisi utk tabel */
 /* yaitu antara 1..Last(T) */
 
-/* ********** TEST KOSONG/PENUH ********** */
-/* *** Test tabel kosong *** */
-boolean ArIsEmpty(ArOrder T){
-    ArIdxType i = 1;
-    while ((i < ArLast(T)) && (ArElUndef)){
-        i++;
-    }
-    return (ArElmt(T,i) == ArElUndef);
-}
-/* Mengirimkan true jika tabel T kosong, mengirimkan false jika tidak */
-/* Range yang dicek adalah [1..Last(T)] */
-
 /* ********** BACA dan TULIS dengan INPUT/OUTPUT device ********** */
 /* *** Mendefinisikan isi tabel dari pembacaan *** */
 void ArTulisIsi(ArOrder T){
     printf("Order \n");
-    if (!ArIsEmpty(T)){
-        ArIdxType i;
-        for (i = 1; i <= ArLast(T); i++){
-            if (ArElmt(T,i) != ArElUndef){
-                switch (ArElmt(T,i)){
-                    case (51) : {
-                        printf("Banana Split\n");
+    ArIdxType i;
+    for (i = 1; i <= ArLast(T); i++){
+        if (ArElmt(T,i) != ArElUndef){
+            switch (ArElmt(T,i)){
+                case (51) : {
+                        printf("Banana Split, %d\n", i);
                         break;
                     }
-                    case (52) : {
-                        printf("Sundae\n");
+                case (52) : {
+                        printf("Sundae, %d\n", i);
                         break;
                     }
-                    case (53) : {
-                        printf("Nasi Telur Dadar\n");
+                case (53) : {
+                        printf("Nasi Telur Dadar, %d\n", i);
                         break;
                     }
-                    case (54) : {
-                        printf("Nasi Ayam Goreng\n");
+                case (54) : {
+                        printf("Nasi Ayam Goreng, %d\n", i);
                         break;
                     }
-                    case (55) : {
-                        printf("Burger\n");
+                case (55) : {
+                        printf("Burger, %d\n", i);
                         break;
                     }
-                    case (56) : {
-                        printf("Hot Dog\n");
+                case (56) : {
+                        printf("Hot Dog, %d\n", i);
                         break;
                     }
-                    case (61) : {
-                        printf("Spaghetti Bolognese\n");
+                case (61) : {
+                        printf("Spaghetti Bolognese, %d\n", i);
                         break;
                     }
-                    case (58) : {
-                        printf("Spaghetti Carbonara\n");
+                case (58) : {
+                        printf("Spaghetti Carbonara, %d\n", i);
                         break;
                     }
-                    default :{
+                default :{
                         break;
                     }
-                }
             }
         }
     }
+
 }
 /* Proses : Menuliskan isi tabel dengan traversal */
 /* I.S. T boleh kosong */
