@@ -51,16 +51,6 @@ void ArCreateEmpty(ArOrder * T, int n);
 /* I.S. T sembarang */
 /* F.S. Terbentuk tabel T kosong dengan kapasitas ArIdxMax-ArIdxMin+1, Neff = 0, dan Last = n*/
 
-/* *** Daya tampung container *** */
-ArIdxType ArGetLastIdx(ArOrder T);
-/* Prekondisi : Tabel T tidak kosong */
-/* Mengirimkan indeks elemen T terakhir yang memiliki nilai terdefinisi */
-
-/* ********** Test Indeks yang valid ********** */
-boolean ArIsIdxEff(ArOrder T, ArIdxType i);
-/* Mengirimkan true jika i adalah indeks yang terdefinisi utk tabel */
-/* yaitu antara 1..Last(T) */
-
 /* ********** BACA dan TULIS dengan INPUT/OUTPUT device ********** */
 /* *** Mendefinisikan isi tabel dari pembacaan *** */
 void ArTulisIsi(ArOrder T);

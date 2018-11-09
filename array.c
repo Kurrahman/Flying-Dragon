@@ -13,24 +13,6 @@ void ArCreateEmpty(ArOrder * T, int n){
 /* I.S. T sembarang */
 /* F.S. Terbentuk tabel T kosong dengan kapasitas ArIdxMax-ArIdxMin+1, Neff = 0, dan Last = n*/
 
-/* *** Daya tampung container *** */
-ArIdxType ArGetLastIdx(ArOrder T){
-    ArIdxType i = ArLast(T);
-    while ((i > 1) && (ArElUndef)){
-        i++;
-    }
-    return i;
-}
-/* Prekondisi : Tabel T tidak kosong */
-/* Mengirimkan indeks elemen T terakhir yang memiliki nilai terdefinisi */
-
-/* ********** Test Indeks yang valid ********** */
-boolean ArIsIdxEff(ArOrder T, ArIdxType i){
-    return ((i >= ArIdxMin) && (i <= ArLast(T)));
-}
-/* Mengirimkan true jika i adalah indeks yang terdefinisi utk tabel */
-/* yaitu antara 1..Last(T) */
-
 /* ********** BACA dan TULIS dengan INPUT/OUTPUT device ********** */
 /* *** Mendefinisikan isi tabel dari pembacaan *** */
 void ArTulisIsi(ArOrder T){
@@ -90,38 +72,6 @@ void ArTulisIsi(ArOrder T){
    Indomie, 2
    Ayam Geprek, 4
 */
-
-/* ********** SEARCHING ********** */
-/* ***  Perhatian : Tabel boleh kosong!! *** */
-ArIdxType ArSearch(ArOrder T, ArType X){
-    ArIdxType i = 1;
-    while ((i < ArLast(T)) && (ArElmt(T,i) != X)){
-        i++;
-    }
-    if (ArElmt(T,i) != X){
-        return ArIdxUndef;
-    }
-    else{
-        return i;
-    }
-}
-/* Search apakah ada elemen tabel T yang bernilai X */
-/* Jika ada, menghasilkan indeks i terkecil, dengan elemen ke-i = X */
-/* Jika tidak ada, mengirimkan IdxUndef */
-/* Menghasilkan indeks tak terdefinisi (IdxUndef) jika tabel T kosong */
-
-int ArBanOrderX(ArOrder T, ArType X){
-    int n = 0;
-    ArIdxType i;
-    for (i = 1; i <= ArLast(T); i++){
-        if (X){
-            n++;
-        }
-    }
-    return n;
-}
-/* Mengembalikan berapa banyak order dengan nilai X */
-/* Bernilai nol untuk array kosong atau tidak terdapat order dengan nilai X */
 
 /* ********** MENAMBAH ELEMEN ********** */
 void ArAddEli  (ArOrder * T, ArType X, ArIdxType i){
