@@ -44,7 +44,7 @@ N1 = N mod 86400, baru N1 dikonversi menjadi JAM */
   return (J);
 }
 
-void IncrementJAM (JAM *J);
+void IncrementJAM (JAM *J)
 /* Jam akan diincrement dari setiap step yang dijalankan */
 {
   //Kamus
