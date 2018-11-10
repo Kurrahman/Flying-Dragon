@@ -36,6 +36,6 @@ JAM DetikToJAM (long N);
    N1 = N mod 86400, baru N1 dikonversi menjadi JAM */
 
 void IncrementJAM (JAM *J);
-/* Mengirim increment dari setiap step yang diinput */
+/* Jam akan diincrement dari setiap step yang dijalankan */
 
 #endif

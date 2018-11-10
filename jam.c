@@ -44,8 +44,8 @@ JAM DetikToJAM (long N)
      return (J);
    }
 
-void IncrementJAM (JAM *J)
-/* Mengirim increment dari setiap step yang diinput */
+void IncrementJAM (JAM *J);
+/* Jam akan diincrement dari setiap step yang dijalankan */
    {
       //Kamus
       long N1;
