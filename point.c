@@ -21,7 +21,7 @@ POINT MakePOINT (float X, float Y)
 }
 
 // KELOMPOK Interaksi dengan I/O device, BACA/TULIS //
-void BacaPOINT (POINT *P)
+void BacaPOINT (POINT *P) 
 /* Membaca nilai absis dan ordinat dari keyboard dan membentuk POINT P berdasarkan dari nilai absis dan ordinat tersebut */
 /* I.S. Sembarang */
 /* F.S. P terdefinisi */
@@ -41,6 +41,7 @@ void TulisPOINT (POINT P)
 }
 
 // KELOMPOK OPERASI LAIN TERHADAP TYPE //
+<<<<<<< HEAD
 void GoRight (POINT *P,boolean valid)
 /* Mengirim salinan P dengan absis ditambah satu */
 {
@@ -81,3 +82,25 @@ void GoDown (POINT *P, boolean valid)
 	}
 	
 }
+=======
+void GoRight (POINT *P)
+/* Mengirim salinan P dengan absis ditambah satu */
+{
+	*P = MakePOINT((Absis(*P) + 1), (Ordinat(*P)));
+}
+void GoLeft (POINT *P)
+/* Mengirim salinan P dengan absis dikurangi satu */
+{
+	*P = MakePOINT((Absis(*P) - 1), (Ordinat(*P)));
+}
+void GoUp (POINT *P)
+/* Mengirim salinan P dengan ordinat ditambah satu */
+{
+	*P = MakePOINT((Absis(*P)), (Ordinat(*P) + 1));
+}
+void GoDown (POINT *P)
+/* Mengirim salinan P dengan ordinat dikurangi satu */
+{
+	*P = MakePOINT((Absis(*P)), (Ordinat(*P) - 1));
+}
+>>>>>>> 2f201cba52c1c9a505a64cd0d0834b135b5be507

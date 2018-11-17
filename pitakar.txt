@@ -1,0 +1,72 @@
+meja 2 2 1 4 
+meja 2 7 2 2
+meja 7 2 3 4
+meja 7 7 4 2
+kursikos 1 2
+kursikos 2 1
+kursikos 2 3
+kursikos 2 6
+kursikos 2 8
+kursikos 3 2
+kursikos 6 2
+kursikos 7 1
+kursikos 7 3
+kursikos 7 6
+kursikos 7 8
+kursikos 8 2
+: 
+meja 2 2 5 4 
+meja 2 7 6 2 
+meja 7 2 7 4
+meja 7 7 8 2 
+kursikos 1 2
+kursikos 2 1
+kursikos 2 3
+kursikos 2 6
+kursikos 2 8
+kursikos 3 2
+kursikos 5 2
+kursikos 7 1
+kursikos 7 3
+kursikos 7 6
+kursikos 7 8
+kursikos 8 2
+:
+meja 2 2 9 4
+meja 2 7 10 2
+meja 7 2 11 4 
+meja 7 7 12 2
+kursikos 1 2
+kursikos 2 1
+kursikos 2 3
+kursikos 2 6
+kursikos 2 8
+kursikos 3 2
+kursikos 5 2
+kursikos 7 1
+kursikos 7 3
+kursikos 7 6
+kursikos 7 8
+kursikos 8 2
+:
+bahan 1 1
+tray 1 8
+bahan 2 1
+bahan 3 1
+bahan 4 1
+bahan 5 1
+bahan 5 4
+bahan 5 5
+bahan 6 1
+bahan 7 1
+bahan 8 1
+bahan 8 4
+bahan 8 5
+bahan 8 6
+bahan 8 7
+bahan 8 8
+:
+jumlahorang 2 
+waktumasuk 24 
+
+MEJA 3 . 
