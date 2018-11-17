@@ -1,6 +1,6 @@
 #include "boolean.h"
 #include <stdio.h>
-#include "jam.h"
+#include "jam.h"  
 
 void TulisJAM (JAM J)
 /* I.S. : J sembarang */
