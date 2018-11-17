@@ -6,6 +6,7 @@
 #define stackt_H
 
 #include "boolean.h"
+#include "matriks.h"
 
 #define Nil 0
 #define MaxEl 10
@@ -67,7 +68,7 @@ void CT (Stack *S);
     I.S : Stack tray terdefinisi
     F.S : Stack tray menjadi kosong */
 
-void GIVE (STACK *S, MATRIKS *M, int nomor, boolean isgive);
+void GIVE (Stack *S, MATRIKS *M, int nomor, boolean isgive);
 /* Memberikan makanan yang berada di paling atas tumpukan ke pengunjung yang
 bertetanggaan
     I.S : Stack Tray Terdefinisi dan posisi player telah berada di sebelah pengunjung

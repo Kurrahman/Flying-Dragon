@@ -41,7 +41,6 @@ void TulisPOINT (POINT P)
 }
 
 // KELOMPOK OPERASI LAIN TERHADAP TYPE //
-<<<<<<< HEAD
 void GoRight (POINT *P,boolean valid)
 /* Mengirim salinan P dengan absis ditambah satu */
 {

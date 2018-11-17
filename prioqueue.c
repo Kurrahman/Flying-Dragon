@@ -156,8 +156,8 @@ F.S : Jika meja kosong, maka Head dari Queue akan didelete dan meja akan diupdat
     //Algoritma
     if (!IsEmpty(*Q)){
         if (isplace){ //Meja Kosong
-            Del(*Q,&Xout);
-            UpdateTable(*M, nomor,"place", Jumlah(Xout));
+            Del(Q,&Xout);
+            UpdateTable(M, nomor,"place", Jumlah(Xout));
         } else {
             printf("Meja telah terisi. Cari meja lain dong");
         }

@@ -46,7 +46,7 @@ void CH (Stack *S){
     infotype Xout;
     //Algoritma
     while (!IsEmpty(*S)) {
-        Pop(*S,&Xout);
+        Pop(S,&Xout);
     }
 }
 
@@ -58,11 +58,11 @@ void CT (Stack *S){
     infotype Xout;
     //Algoritma
     while (!IsEmpty(*S)){
-        Pop(*S,&Xout);
+        Pop(S,&Xout);
     }
 }
 
-void GIVE (STACK *S, MATRIKS *M, int nomor, boolean isgive){
+void GIVE (Stack *S, MATRIKS *M, int nomor, boolean isgive){
 /* Memberikan makanan yang berada di paling atas tumpukan ke pengunjung yang
 bertetanggaan
     I.S : Stack Tray Terdefinisi dan posisi player telah berada di sebelah pengunjung
@@ -73,8 +73,8 @@ bertetanggaan
    //Algoitma
    if (!IsEmpty(*S)){
         if (isgive){
-            Pop(*S,&Xout);
-            UpdateTable(*M, nomor,"give", 2);
+            Pop(S,&Xout);
+            UpdateTable(M, nomor,"give", 2);
         } else {
             printf ("Tidak bisa give");
         }

@@ -37,7 +37,6 @@ void TulisPOINT (POINT P);
 /* F.S. P tertulis di layar dengan format "(X,Y)" */
 
 /* *** KELOMPOK OPERASI LAIN TERHADAP TYPE *** */
-<<<<<<< HEAD
 void GoRight (POINT *P, boolean valid);
 /* Mengirim salinan P dengan absis ditambah satu */
 void GoLeft (POINT *P, boolean valid);
