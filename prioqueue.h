@@ -7,6 +7,7 @@
 #define prioqueue_H
 
 #include "boolean.h"
+#include "matriks.h"
 
 #define Nil 0
 /* Konstanta untuk mendefinisikan address tak terdefinisi */
@@ -91,5 +92,10 @@ void DecreSabar (Queue * Q);
 /* Mengurangi Info dari infotype */
 /* I.S. Q tidak mungkin kosong */
 /* F.S. Nilai dari Info(e) = Info(e) - 1 */
+
+void PLACE (Queue *Q, MATRIKS *M, boolean isplace);
+/* Menaruh antrian orang di di meja yang kosong 
+I.S : Queue Terdefinisi dan player harus berada di area meja
+F.S : Jika meja kosong, maka Head dari Queue akan didelete dan meja akan diupdate */
 
 #endif

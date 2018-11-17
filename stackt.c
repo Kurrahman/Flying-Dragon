@@ -61,3 +61,23 @@ void CT (Stack *S){
         Pop(*S,&Xout);
     }
 }
+
+void GIVE (STACK *S, MATRIKS *M, int nomor, boolean isgive){
+/* Memberikan makanan yang berada di paling atas tumpukan ke pengunjung yang
+bertetanggaan
+    I.S : Stack Tray Terdefinisi dan posisi player telah berada di sebelah pengunjung
+    F.S : Mengeluarkan Top of Stack dari Stack Array dan memberikannya ke pengunjung
+    */ 
+   //Kamus Lokal
+   infotype Xout;
+   //Algoitma
+   if (!IsEmpty(*S)){
+        if (isgive){
+            Pop(*S,&Xout);
+            UpdateTable(*M, nomor,"give", 2);
+        } else {
+            printf ("Tidak bisa give");
+        }
+   }
+   
+}

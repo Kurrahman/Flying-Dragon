@@ -146,3 +146,22 @@ void DecreSabar (Queue * Q){
     } while (indeks != Tail(*Q));
 
 }
+
+void PLACE (Queue *Q, MATRIKS *M,int nomor, boolean isplace){
+/* Menaruh antrian orang di di meja yang kosong 
+I.S : Queue Terdefinisi dan player harus berada di area meja
+F.S : Jika meja kosong, maka Head dari Queue akan didelete dan meja akan diupdate */
+    //Kamus Lokal
+    infotype Xout;
+    //Algoritma
+    if (!IsEmpty(*Q)){
+        if (isplace){ //Meja Kosong
+            Del(*Q,&Xout);
+            UpdateTable(*M, nomor,"place", Jumlah(Xout));
+        } else {
+            printf("Meja telah terisi. Cari meja lain dong");
+        }
+    } else {
+        printf("Nggak ada yang antri:(");
+    }
+}

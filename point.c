@@ -48,7 +48,7 @@ void GoRight (POINT *P,boolean valid)
 	if (valid) {
 		*P = MakePOINT((Absis(*P) + 1), (Ordinat(*P)));
 	} else {
-		/* Do nothing */
+		printf("notok boy");
 	}
 	
 }
@@ -58,7 +58,7 @@ void GoLeft (POINT *P, boolean valid)
 	if (valid){
 		*P = MakePOINT((Absis(*P) - 1), (Ordinat(*P)));
 	} else {
-		// DO nothing
+		printf("notok boy");
 	}
 	
 }
@@ -68,7 +68,7 @@ void GoUp (POINT *P, boolean valid)
 	if (valid) {
 		*P = MakePOINT((Absis(*P)), (Ordinat(*P) + 1));	
 	} else {
-		// Do nothing
+		printf("notok boy");
 	}
 	
 }
@@ -78,7 +78,7 @@ void GoDown (POINT *P, boolean valid)
 	if (valid) {
 		*P = MakePOINT((Absis(*P)), (Ordinat(*P) - 1));
 	} else {
-		//Do nothing
+		printf("notok boy");
 	}
 	
 }
