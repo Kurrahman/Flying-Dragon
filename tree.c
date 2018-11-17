@@ -4,7 +4,7 @@
 
 /* *** Konstruktor *** */
 BinTree Tree(infotype Akar, BinTree L, BinTree R){
-    BinTree T = (BinTree) malloc (sizeof(infotype));
+    BinTree T = (BinTree) malloc (sizeof(Node));
     if (T != Nil){
         Akar(T) = Akar;
         Left(T) = L;
@@ -24,7 +24,7 @@ void MakeTree(infotype Akar, BinTree L, BinTree R, BinTree *P){
 
 /* Manajemen Memory */
 addrNode AlokNode(infotype X){
-    addrNode P = (addrNode) malloc (sizeof(BinTree));
+    addrNode P = (addrNode) malloc (sizeof(Node));
     if (P != Nil){
         Akar(P) = X;
         Right(P) = Nil;
@@ -78,19 +78,119 @@ int Level(BinTree P, infotype X){
 /* *** Traversal *** */
 void PrintTree(BinTree P, int h){
     int i; 
-    printf("%d\n", Akar(P));
+    switch (Akar(P)){
+        case (11) : {
+            printf("Piring\n");
+            break;
+        }
+        case (21) : {
+            printf("Sendok\n");
+            break;
+        }
+        case (22) : {
+            printf("Garpu\n");
+            break;
+        }
+        case (31) : {
+            printf("Es Krim\n");
+            break;
+        }
+        case (32) : {
+            printf("Nasi\n");
+            break;
+        }
+        case (33) : {
+            printf("Roti\n");
+            break;
+        }
+        case (34) : {
+            printf("Spaghetti\n");
+            break;
+        }
+        case (41) : {
+            printf("Pisang\n");
+            break;
+        }
+        case (42) : {
+            printf("Stroberi\n");
+            break;
+        }
+        case (43) : {
+            printf("Telur\n");
+            break;
+        }
+        case (44) : {
+            printf("Ayam Goreng\n");
+            break;
+        }
+        case (45) : {
+            printf("Patty\n");
+            break;
+        }
+        case (46) : {
+            printf("Sosis\n");
+            break;
+        }
+        case (47) : {
+            printf("Bolognese\n");
+            break;
+        }
+        case (48) : {
+            printf("Carbonara\n");
+            break;
+        }
+        case (51) : {
+            printf("Banana Split\n");
+            break;
+        }
+        case (52) : {
+            printf("Sundae\n");
+            break;
+        }
+         case (53) : {
+            printf("Nasi Telur Dadar\n");
+            break;
+        }
+        case (54) : {
+            printf("Nasi Ayam Goreng\n");
+            break;
+        }
+        case (55) : {
+            printf("Burger\n");
+            break;
+        }
+        case (56) : {
+            printf("Hot Dog\n");
+            break;
+        }
+        case (57) : {
+            printf("Keju\n");
+            break;
+        }
+        case (58) : {
+            printf("Spaghetti Carbonara\n");
+            break;
+        }
+        default :{
+            break;
+        }
+        case (61) : {
+            printf("Spaghetti Bolognese\n");
+            break;
+        }
+    }
     if (Left(P) != Nil){
         for (i = 1; i <= h/2; i++){
             printf("  ");
         }
-        PrintTree(Left(P), h + 2);
+        PrintTree(Left(P), h + 4);
     }
 
     if (Right(P) != Nil){
         for (i = 1; i <= h/2; i++){
             printf("  ");
         }
-        PrintTree(Right(P), h + 2);
+        PrintTree(Right(P), h + 4);
     }
 }
 /* I.S. P terdefinisi, h adalah jarak indentasi (spasi) */
@@ -175,3 +275,29 @@ int NbDaun(BinTree P){
 }
 /* Mengirimkan banyaknya daun (node) pohon biner P */
 /* Prekondisi: P tidak kosong */
+void InitTreeRecipe(BinTree *A){
+    MakeTree(11,Nil,Nil,A);
+    Left(*A) = AlokNode(21);
+    Right(*A) = AlokNode(22);
+    Left(Left(*A)) = AlokNode(31);
+    Right(Left(*A)) = AlokNode(32);
+    Left(Right(*A)) = AlokNode(33);
+    Right(Right(*A)) = AlokNode(34);
+    Left(Left(Left(*A))) = AlokNode(41);
+    Right(Left(Left(*A))) = AlokNode(42);
+    Left(Right(Left(*A))) = AlokNode(43);
+    Right(Right(Left(*A))) = AlokNode(44);
+    Left(Left(Right(*A))) = AlokNode(45);
+    Right(Left(Right(*A))) = AlokNode(46);
+    Left(Right(Right(*A))) = AlokNode(47);
+    Right(Right(Right(*A))) = AlokNode(48);
+    Left(Left(Left(Left(*A)))) = AlokNode(51);
+    Left(Right(Left(Left(*A)))) = AlokNode(52);
+    Left(Left(Right(Left(*A)))) = AlokNode(53);
+    Left(Right(Right(Left(*A)))) = AlokNode(54);
+    Left(Left(Left(Right(*A)))) = AlokNode(55);
+    Left(Right(Left(Right(*A)))) = AlokNode(56);
+    Left(Left(Right(Right(*A)))) = AlokNode(57);
+    Left(Right(Right(Right(*A)))) = AlokNode(58);
+    Left(Left(Left(Right(Right(*A))))) = AlokNode(61);
+}
