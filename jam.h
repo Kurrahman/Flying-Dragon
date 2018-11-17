@@ -9,7 +9,6 @@ typedef struct {
 	int MM; /* integer [0..59] */
 	int SS; /* integer [0..59] */
 } JAM;
-test
 
 /* *** Notasi Akses: selektor JAM *** */
 #define Hour(J) (J).HH
