@@ -21,7 +21,7 @@ POINT MakePOINT (float X, float Y)
 }
 
 // KELOMPOK Interaksi dengan I/O device, BACA/TULIS //
-void BacaPOINT (POINT *P)
+void BacaPOINT (POINT *P) 
 /* Membaca nilai absis dan ordinat dari keyboard dan membentuk POINT P berdasarkan dari nilai absis dan ordinat tersebut */
 /* I.S. Sembarang */
 /* F.S. P terdefinisi */

@@ -7,6 +7,7 @@ typedef struct {
 	float X; /* absis   */
 	float Y; /* ordinat */
 } POINT;
+test
 
 /* *** Notasi Akses: Selektor POINT *** */
 #define Absis(P) (P).X
