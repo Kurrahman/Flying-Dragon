@@ -50,7 +50,7 @@ typedef struct {
 
 /* ********** DEFINISI PROTOTIPE PRIMITIF ********** */              
 /* *** Konstruktor membentuk MATRIKS *** */
-void MakeMATRIKS (MATRIKS M); 
+void MakeMATRIKS (MATRIKS *M); 
 /* Membentuk sebuah MATRIKS "kosong" yang siap diisi*/
 /* I.S. Matriks M Sembarang */
 /* F.S. semua ElID pada matriks M diisi MapUndef */
