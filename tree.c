@@ -24,7 +24,7 @@ void MakeTree(infotype Akar, BinTree L, BinTree R, BinTree *P){
 
 /* Manajemen Memory */
 addrNode AlokNode(infotype X){
-    addrNode P = (addrNode) malloc (sizeof(infotype));
+    addrNode P = (addrNode) malloc (sizeof(BinTree));
     if (P != Nil){
         Akar(P) = X;
         Right(P) = Nil;
@@ -80,14 +80,15 @@ void PrintTree(BinTree P, int h){
     int i; 
     printf("%d\n", Akar(P));
     if (Left(P) != Nil){
-        for (i = 1; i <= h; i++){
-            printf(" ");
+        for (i = 1; i <= h/2; i++){
+            printf("  ");
         }
         PrintTree(Left(P), h + 2);
     }
+
     if (Right(P) != Nil){
-        for (i = 1; i <= h; i++){
-            printf(" ");
+        for (i = 1; i <= h/2; i++){
+            printf("  ");
         }
         PrintTree(Right(P), h + 2);
     }
