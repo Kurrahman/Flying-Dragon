@@ -45,15 +45,6 @@ void GoLeft (POINT *P, boolean valid);
 void GoUp (POINT *P, boolean valid);
 /* Mengirim salinan P dengan ordinat ditambah satu */
 void GoDown (POINT *P, boolean valid);
-=======
-void GoRight (POINT *P);
-/* Mengirim salinan P dengan absis ditambah satu */
-void GoLeft (POINT *P);
-/* Mengirim salinan P dengan absis dikurangi satu */
-void GoUp (POINT *P);
-/* Mengirim salinan P dengan ordinat ditambah satu */
-void GoDown (POINT *P);
->>>>>>> 2f201cba52c1c9a505a64cd0d0834b135b5be507
 /* Mengirim salinan P dengan ordinat dikurangi satu */
 
 #endif
