@@ -7,6 +7,8 @@
 
 #include "boolean.h"
 #include "matriks.h"
+#include "array.h"
+#include "point.h"
 
 #define Nil 0
 #define MaxEl 10
@@ -68,12 +70,16 @@ void CT (Stack *S);
     I.S : Stack tray terdefinisi
     F.S : Stack tray menjadi kosong */
 
-void GIVE (Stack *S, MATRIKS *M, int nomor, boolean isgive);
+void GIVE (Stack *S, MATRIKS *M,ArOrder *T, int nomor, boolean isgive);
 /* Memberikan makanan yang berada di paling atas tumpukan ke pengunjung yang
 bertetanggaan
     I.S : Stack Tray Terdefinisi dan posisi player telah berada di sebelah pengunjung
     F.S : Mengeluarkan Top of Stack dari Stack Array dan memberikannya ke pengunjung
     */ 
-
+void TAKE (POINT P, Stack *S,  boolean istake);
+/* Mengambil bahan yang telah tersedia di dapur
+    I.S : Handstack terdefinisi
+    F.S : Mengambil barang di dapur tergantung dari posisi player
+    */
 
 #endif

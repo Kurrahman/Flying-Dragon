@@ -1,5 +1,6 @@
 #include "array.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 /* ********** KONSTRUKTOR ********** */
 /* Konstruktor : create tabel kosong  */
@@ -92,3 +93,22 @@ void ArDelEli  (ArOrder * T, ArIdxType i){
 /* F.S. Banyaknya elemen tabel berkurang satu */
 /*      Tabel T mungkin menjadi kosong */
 /*      Elemen pada indeks i menjadi tidak terdefinisi */
+
+void ORDER (ArOrder *T, MATRIKS *M, int nomor, boolean isorder){
+/* Menerima order dari meja
+  I.S : Array order telah terdefinisi dan player berada dimanapun di dalam peta
+  F.S : Jika isorder bernilai true, maka akan menerima orderan makanan yang dirandom 
+  */
+    //Kamus Lokal
+    int intmakanan;
+    //Algoritma
+    if (isorder){
+        intmakanan = rand() % 62;
+        while (intmakanan==51 || intmakanan==52 || intmakanan== 53 || intmakanan== 54 || intmakanan== 55 || intmakanan== 56 || intmakanan== 58 || intmakanan==61){
+            intmakanan = rand() % 62;
+        } //Dapat random makanan
+        ArAddEli(T,intmakanan,nomor);
+    }
+}
+
+

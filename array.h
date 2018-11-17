@@ -8,6 +8,7 @@
 #define ARRAY_H
 
 #include "boolean.h"
+#include "matriks.h"
 
 /*  Kamus Umum */
 #define ArIdxMax 100
@@ -81,4 +82,12 @@ void ArDelEli  (ArOrder * T, ArIdxType i);
 /* F.S. Banyaknya elemen tabel berkurang satu */
 /*      Tabel T mungkin menjadi kosong */
 /*      Elemen pada indeks i menjadi tidak terdefinisi */
+
+void ORDER (ArOrder *T, MATRIKS *M, int nomor, boolean isorder);
+/* Menerima order dari meja
+  I.S : Array order telah terdefinisi dan player berada dimanapun di dalam peta
+  F.S : Jika isorder bernilai true, maka akan menerima orderan makanan yang dirandom 
+  */
+
+
 #endif

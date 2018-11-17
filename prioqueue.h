@@ -9,6 +9,7 @@
 #include "boolean.h"
 #include "matriks.h"
 
+
 #define Nil 0
 /* Konstanta untuk mendefinisikan address tak terdefinisi */
 

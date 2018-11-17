@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "stackt.h"
+#include "point.h"
 
 
 /* ************ Prototype ************ */
@@ -62,7 +63,7 @@ void CT (Stack *S){
     }
 }
 
-void GIVE (Stack *S, MATRIKS *M, int nomor, boolean isgive){
+void GIVE (Stack *S, MATRIKS *M,ArOrder *T, int nomor, boolean isgive){
 /* Memberikan makanan yang berada di paling atas tumpukan ke pengunjung yang
 bertetanggaan
     I.S : Stack Tray Terdefinisi dan posisi player telah berada di sebelah pengunjung
@@ -74,10 +75,117 @@ bertetanggaan
    if (!IsEmpty(*S)){
         if (isgive){
             Pop(S,&Xout);
-            UpdateTable(M, nomor,"give", 2);
+            if (OrderMeja(*T,nomor) == Xout){
+                UpdateTable(M, nomor,"give", 2);
+                ArDelEli(T,nomor); // Pesanan sudah diberikan
+            } else{
+                Push(S,Xout); // Makanan dipush lagi karena tidak sesuai dengan pesanan
+            }
         } else {
             printf ("Tidak bisa give");
         }
    }
    
+}
+
+void TAKE (POINT P, Stack *S, boolean istake){
+/* Mengambil bahan yang telah tersedia di dapur
+    I.S : Handstack terdefinisi
+    F.S : Mengambil barang di dapur tergantung dari posisi player
+    */
+    if(Absis(P) == 1 && Ordinat(P) == 2){
+        if(istake){
+            Push(S,11);
+        }
+    }
+    else
+    if(Absis(P) == 2 && Ordinat(P) == 2){
+        if(istake){
+            Push(S,21);
+        }
+    }
+    else
+    if(Absis(P) == 3 && Ordinat(P) == 2){
+        if(istake){
+            Push(S,22);
+        }
+    }
+    else
+    if(Absis(P) == 4 && Ordinat(P) == 2){
+        if(istake){
+            Push(S,31);
+        }
+    }
+    else
+    if(Absis(P) == 5 && Ordinat(P) == 2){
+        if(istake){
+            Push(S,32);
+        }
+    }
+    else
+    if(Absis(P) == 6 && Ordinat(P) == 2){
+        if(istake){
+            Push(S,33);
+        }
+    }
+    else
+    if(Absis(P) == 7 && Ordinat(P) == 2){
+        if(istake){
+            Push(S,34);
+        }
+    }
+    else
+    if(Absis(P) == 8 && Ordinat(P) == 2){
+        if(istake){
+            Push(S,41);
+        }
+    }
+    else
+    if((Absis(P) == 5 && Ordinat(P) == 3) || (Absis(P) == 4 && Ordinat(P) == 4) || (Absis(P) == 6 && Ordinat(P) == 4)){
+        if(istake){
+            Push(S,42);
+        }
+    }
+    else
+    if((Absis(P) == 4 && Ordinat(P) == 5) || (Absis(P) == 6 && Ordinat(P) == 5)){
+        if(istake){
+            Push(S,43);
+        }
+    }
+    else
+    if((Absis(P) == 4 && Ordinat(P) == 6) || (Absis(P) == 6 && Ordinat(P) == 6) || (Absis(P) == 5 && Ordinat(P) == 7)){
+        if(istake){
+            Push(S,44);
+        }
+    }
+    else
+    if((Absis(P) == 8 && Ordinat(P) == 3) || (Absis(P) == 7 && Ordinat(P) == 4)){
+        if(istake){
+            Push(S,45);
+        }
+    }
+    else
+    if(Absis(P) == 7 && Ordinat(P) == 5){
+        if(istake){
+            Push(S,46);
+        }
+    }
+    else
+    if(Absis(P) == 7 && Ordinat(P) == 6){
+        if(istake){
+            Push(S,47);
+        }
+    }
+    else
+    if(Absis(P) == 7 && Ordinat(P) == 7){
+        if(istake){
+            Push(S,48);
+        }
+    }
+    else
+    if(Absis(P) == 7 && Ordinat(P) == 8){
+        if(istake){
+            Push(S,57);
+        }
+    }
 }
