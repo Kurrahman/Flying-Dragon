@@ -93,5 +93,5 @@ int NbDaun(BinTree P);
 int Level(BinTree P, infotype X);
 /* Mengirimkan level dari node X yang merupakan salah satu simpul dari pohon biner P. 
    Akar(P) level-nya adalah 1. Pohon P tidak kosong. */
-  
+void InitTreeRecipe(BinTree *A);
 #endif
